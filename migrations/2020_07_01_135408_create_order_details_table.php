@@ -21,7 +21,8 @@ class CreateOrderDetailsTable extends Migration
             $table->tinyInteger('status'); 
             $table->float('total_price'); 
             $table->timestamps();
-            $table->foreign('ship_id')->references('id')->on('ships');
+            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
